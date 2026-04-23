@@ -1,0 +1,8 @@
+{
+  "actorSpecification": 1,
+  "name": "ai-agents-for-customer-service",
+  "title": "AI Customer Service Agent Finder & Comparator",
+  "description": "Compare AI customer service agents. Scrapes G2, Capterra & Zendesk Marketplace. Structured JSON: pricing, ratings, channel support, integrations.",
+  "version": "0.1",
+  "meta": { "templateId": "ts-cheerio" }
+}
