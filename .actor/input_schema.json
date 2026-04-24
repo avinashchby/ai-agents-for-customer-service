@@ -1,55 +1,31 @@
 {
-  "title": "AI Agents for Customer Service Input",
+  "title": "Ai Agents For Customer Service Input",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
+    "mode": {
+      "title": "Mode",
+      "type": "string",
+      "description": "compare-tools: Returns list of AI tools in this category with ratings and pricing. extract-data: Returns structured data for AI agent pipelines.",
+      "enum": [
+        "compare-tools",
+        "extract-data"
+      ],
+      "default": "compare-tools",
+      "editor": "select"
+    },
     "maxResults": {
       "title": "Max Results",
       "type": "integer",
-      "description": "Maximum number of tools/products to return across all sources.",
-      "default": 30,
+      "description": "Maximum number of results to return.",
+      "default": 25,
       "minimum": 1,
       "maximum": 200,
-      "editor": "number"
-    },
-    "minRating": {
-      "title": "Minimum Rating",
-      "type": "number",
-      "description": "Minimum G2 or Capterra star rating (0–5). Results below this threshold are excluded.",
-      "default": 0,
-      "minimum": 0,
-      "maximum": 5,
-      "editor": "number"
-    },
-    "channels": {
-      "title": "Supported Channels",
-      "type": "array",
-      "description": "Filter results to products that support at least one of these channels.",
-      "default": [],
-      "items": {
-        "type": "string",
-        "enum": ["chat", "email", "voice", "ticketing"]
-      },
-      "editor": "stringList"
-    },
-    "integrations": {
-      "title": "Required Integrations",
-      "type": "array",
-      "description": "Filter results to products that integrate with at least one of these platforms.",
-      "default": [],
-      "items": {
-        "type": "string",
-        "enum": ["Zendesk", "Intercom", "Salesforce"]
-      },
-      "editor": "stringList"
-    },
-    "pricingModel": {
-      "title": "Pricing Model",
-      "type": "string",
-      "description": "Filter results by pricing model.",
-      "default": "all",
-      "enum": ["free", "freemium", "paid", "enterprise", "all"],
-      "editor": "select"
+      "editor": "number",
+      "sectionCaption": "General Settings"
     }
-  }
+  },
+  "required": [
+    "mode"
+  ]
 }
